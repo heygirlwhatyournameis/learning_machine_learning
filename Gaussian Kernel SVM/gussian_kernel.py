@@ -28,11 +28,11 @@ n=np.size(x,0)
 d=2
 
 x=np.array(x)
+lamb=1
 
 #Kernel Function
 def kernel(x1,x2):
-	return np.dot(x1.T,x2)
-
+	return np.exp(-lamb* np.dot( (x1-x2).T, (x1-x2)))
 	
 #P
 P=np.empty((n,n))
@@ -76,8 +76,13 @@ while i<n:
 		break
 	i+=1
 
-def threshold(x):
-	return (1 if np.dot(w.T,x)+b>=0 else 0)
+def threshold(x_hat):
+	i=0
+	t=0
+	while i<n:
+		t+=a[i]*y[i]*kernel(x_hat,x[i])
+		i+=1
+	return (1 if t+b>=0 else 0)
 
 def predict(data):
 	result=np.empty(int(data.size/2))
@@ -103,4 +108,3 @@ plt.scatter(x_1,x_2,c=y,alpha=0.5,cmap=pcolors,edgecolors='k')
 
 
 plt.show()
-# print(grid_test)
