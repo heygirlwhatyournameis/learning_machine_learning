@@ -1,7 +1,4 @@
-#用对偶方法+线性核函数解决二维数据分类问题
-#作者：陈中舒
 #Make use of dual method and linear kenerl function to solve 2d classifaction problem
-#Author: ZHONGSHU CHEN
 
 import numpy as np 
 import matplotlib.pyplot as plt
@@ -15,6 +12,7 @@ data=np.array([
 	[2.1,2.,-1.],
 	[2.1,2.1,-1.],
 	[2.,2.1,-1.],
+	[1.,0.,1.],
 	[2.,0.,1.],
 	[2.,0.1,1.],
 	[2.2,0.1,1.],

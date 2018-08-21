@@ -1,7 +1,4 @@
-#利用CVXOPT二次规划问题工具解决二维硬边距支持向量机问题并输出图像
-#作者：陈中舒
 #Use the QP tool in cvxopt to solve 2d hard margin SVM problem and draw out a figure
-#Author: ZHONGSHU CHEN
 
 import numpy as np 
 import matplotlib.pyplot as plt
